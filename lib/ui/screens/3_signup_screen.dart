@@ -26,7 +26,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 40,),
-                    Text("Join With us", style: screenTitleTextStyle,),
+                    Text("2 Join With us", style: screenTitleTextStyle,),
                     const SizedBox(height: 24,),
                     AppTextFieldWidget(hintText: "Email", controller: TextEditingController()),
 

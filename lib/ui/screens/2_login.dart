@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Get Started With",
+                "2 Get Started With",
                 style: screenTitleTextStyle,
               ),
               SizedBox(
@@ -57,7 +57,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextButton.styleFrom(
                         padding: EdgeInsets.all(0)
                     ),
-
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>VerifyWithEmailScreen()));
                     },

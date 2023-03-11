@@ -20,7 +20,7 @@ class AppElevatedButton extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xff21BF73)
               ),
-              onPressed: (){}, child: child)),
+              onPressed: onTap, child: child)),
     );
   }
 }
