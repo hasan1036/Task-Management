@@ -6,12 +6,13 @@ class AppTextFieldWidget extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
   final bool? obscureText;
+  final int? maxLine;
 
   const AppTextFieldWidget({
     super.key,
     required this.hintText,
     required this.controller,
-    this.obscureText,
+    this.obscureText, this.maxLine,
   });
 
   @override
@@ -19,6 +20,7 @@ class AppTextFieldWidget extends StatelessWidget {
     return TextFormField(
         controller: controller,
         obscureText: obscureText ?? false,
+        maxLines: maxLine ?? 1,
         decoration: InputDecoration(
             hintText: hintText,
             fillColor: Colors.white,

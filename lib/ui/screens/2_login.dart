@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management1_2/DashBoard_Ui/2.0_main_bottom_nav_bar.dart';
 import 'package:task_management1_2/ui/screens/4_verify_with_email_screen.dart';
 import 'package:task_management1_2/ui/utils/text_styles.dart';
 import 'package:task_management1_2/ui/widgets/screen_back_ground_1w.dart';
@@ -45,8 +46,12 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 16,
               ),
+
               AppElevatedButton(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MainBottomNavBar()), (route) => false);
+
+                },
                 child: const Icon(Icons.arrow_circle_right_outlined),
               ),
               SizedBox(
@@ -74,18 +79,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Color(0xff2E374F),
                       fontWeight: FontWeight.w600,
                       fontSize: 12),),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
-                      },
-                      child: Text(
-                        "Sign up",
-                        style: TextStyle(
-                            color: Color(0xff21BF73),
-                            fontWeight: FontWeight.w600,
-                            fontSize: 12),
-                      )),
+                  
+                  TextButtonWidget(textButton: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                  }, text: 'SignUp',
+
+
+                  ),
+                  
                 ],
               ),
 
@@ -94,6 +95,37 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class TextButtonWidget extends StatelessWidget {
+
+  final String text;
+  final VoidCallback textButton;
+  const TextButtonWidget({
+    super.key, required this.textButton, required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+
+
+        onPressed: textButton,
+      //
+      // onPressed: () {
+      //     Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));},
+
+
+        child: Text(
+          text,
+          style: TextStyle(
+              color: Color(0xff21BF73),
+              fontWeight: FontWeight.w600,
+              fontSize: 12),
+        ),
+    
     );
   }
 }
