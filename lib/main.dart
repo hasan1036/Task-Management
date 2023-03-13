@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_management1_2/ui/screens/2_login.dart';
-import 'package:task_management1_2/ui/screens/1_splash_screen.dart';
+import 'package:task_management1_2/ui/screens/1.2_login.dart';
+import 'package:task_management1_2/ui/screens/1.1_splash_screen.dart';
 
 
 void main() {

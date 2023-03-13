@@ -4,7 +4,7 @@ import '../utils/text_styles.dart';
 import '../widgets/app_elevated_button_3w.dart';
 import '../widgets/app_text_field_widget_2w.dart';
 import '../widgets/screen_back_ground_1w.dart';
-import '2_login.dart';
+import '1.2_login.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({Key? key}) : super(key: key);

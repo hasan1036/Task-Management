@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_management1_2/ui/screens/2_login.dart';
-import 'package:task_management1_2/ui/screens/5_otp_verification_screen.dart';
+import 'package:task_management1_2/ui/screens/1.2_login.dart';
+import 'package:task_management1_2/ui/screens/1.5_otp_verification_screen.dart';
 import 'package:task_management1_2/ui/utils/text_styles.dart';
 import 'package:task_management1_2/ui/widgets/app_elevated_button_3w.dart';
 import 'package:task_management1_2/ui/widgets/app_text_field_widget_2w.dart';

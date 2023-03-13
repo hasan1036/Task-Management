@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:task_management1_2/ui/screens/6_set_password_screen.dart';
+import 'package:task_management1_2/ui/screens/1.6_set_password_screen.dart';
 import 'package:task_management1_2/ui/utils/text_styles.dart';
 import 'package:task_management1_2/ui/widgets/screen_back_ground_1w.dart';
 
 import '../widgets/app_elevated_button_3w.dart';
 import '../widgets/app_text_field_widget_2w.dart';
-import '2_login.dart';
+import '1.2_login.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({Key? key}) : super(key: key);
