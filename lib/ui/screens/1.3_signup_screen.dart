@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_management1_2/data/3.1network_utils.dart';
+import 'package:task_management1_2/data/3.2urls.dart';
 import 'package:task_management1_2/ui/screens/1.2_login.dart';
 import 'package:task_management1_2/ui/utils/snackbar_message.dart';
 import 'package:task_management1_2/ui/utils/text_styles.dart';
@@ -21,8 +22,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController mobileETController = TextEditingController();
   final TextEditingController passwordETController = TextEditingController();
 
- // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  bool _inProgress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -117,12 +118,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const SizedBox(height: 16,),
 
+                if(_inProgress)
+                  Center(
+                    child: CircularProgressIndicator(
+                        color: Colors.green
+                    ),
+
+                  )
+                else
                 AppElevatedButton(
                     child: Icon(Icons.arrow_circle_right_outlined),
                     onTap: () async {
                       if (_formKey.currentState!.validate()){
-                        //final result =  NetworkUtils.postMethod()
-                        final result =await NetworkUtils.postMethod('https://task.teamrabbil.com/api/v1/registration', body: {
+                        _inProgress = true;
+                        setState(() {
+
+                        });
+                        final result =await NetworkUtils.postMethod(Urls.signUpUrl, body: {
                           'email' : emailETController.text.trim(),
                           'mobile' : mobileETController.text.trim(),
                           'password' : passwordETController.text,
@@ -131,6 +143,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
 
                         );
+                        _inProgress = false;
+                        setState(() {
+
+                        });
                         if(result != null && result['status']=='success'){
                           emailETController.clear();
                           mobileETController.clear();

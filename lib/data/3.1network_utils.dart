@@ -12,9 +12,7 @@ class NetworkUtils{
     try{
       if(response.statusCode == 200){
         return jsonDecode(response.body);
-      }
-
-      else if(response.statusCode == 401){
+      } else if(response.statusCode == 401){
         if(onUnAuthorize != null){
           onUnAuthorize();
         }
@@ -38,6 +36,7 @@ class NetworkUtils{
       }
 
       else if(response.statusCode == 401){
+
         if(onUnAuthorize != null){
           onUnAuthorize();
         }
